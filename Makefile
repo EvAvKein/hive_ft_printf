@@ -6,13 +6,14 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2024/11/13 17:32:15 by ekeinan          ###   ########.fr        #
+#    Updated: 2024/11/17 16:09:27 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRC_CORE = 
+SRC_CORE = ft_printf.c \
+		   ft_putdecimals.c
 
 OBJ_CORE = $(SRC_CORE:.c=.o)
 
@@ -24,14 +25,18 @@ all: $(NAME)
 	cc $(COMPILE_FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ_CORE)
+	@cd libft && make
 	ar -rcs $(NAME) $(OBJ_CORE)
 	
 clean:
+	@cd libft && make $@
 	rm -f $(OBJ_CORE) ${OBJ_BONUS} 
 
 fclean: clean
+	@cd libft && make $@
 	rm -f $(NAME)
 
 re: fclean all
+	@cd libft && make $@
 
 .PHONY: all bonus clean fclean re
