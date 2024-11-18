@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2224/11/14 15:00:24 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/17 17:40:34 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/18 10:40:27 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ static void process_conversion(const char *str, va_list args)
 	else if (conv_match(str, "%s"))
 		ft_putstr_fd((char *) va_arg(args, int *), 1);
 	else if (conv_match(str, "%p"))
-		write(1, "<\"%p\" NOT IMPLEMENTED>", 22);
+	{
+		write(1, "0x", 2);
+		ft_puthex(va_arg(args, long long), 1);
+	}
 	else if (conv_match(str, "%d"))
 		ft_putdec(va_arg(args, long long));
 	else if (conv_match(str, "%i"))
@@ -49,7 +52,6 @@ int	ft_printf(const char *format, ...)
 {
 	size_t	f_i;
 	va_list args;
-	//char	*next_section;
 
 	va_start(args, format);
 
