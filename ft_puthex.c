@@ -11,15 +11,16 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdint.h>
 #include "ft_printf.h"
 
-static void recursive_until_write_last_hex(long long n, int lowercase)
+static void recursive_until_write_last_hex(uintptr_t n, int lowercase)
 {
-    int chr = 63;
+	int chr = 63;
 
 	if (n > 15)
 	{
-        recursive_until_write_last_hex(n / 16, lowercase);
+		recursive_until_write_last_hex(n / 16, lowercase);
 		n %= 16;
 	}
 	if (n < 10)
@@ -28,12 +29,10 @@ static void recursive_until_write_last_hex(long long n, int lowercase)
 		chr = (n % 10) + 'a';
 	else
 		chr = (n % 10) + 'A';
-	
-	//ft_printf("digit: %d, char: %c\n", n, chr);
-    write(1, &chr, 1);
+	write(1, &chr, 1);
 }
 
-void ft_puthex(long long n, int lowercase)
+void ft_puthex(uintptr_t n, int lowercase)
 {
 	recursive_until_write_last_hex(n, lowercase);	
 }
