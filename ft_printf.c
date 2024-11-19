@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdarg.h>
+#include <stdint.h>
 #include <unistd.h>
 #include "libft/libft.h"
 #include "ft_printf.h"
@@ -30,14 +31,14 @@ static void process_conversion(const char *str, va_list args)
 	else if (conv_match(str, "%p"))
 	{
 		write(1, "0x", 2);
-		ft_puthex(va_arg(args, long long), 1);
+		ft_puthex(va_arg(args, uintptr_t), 1);
 	}
 	else if (conv_match(str, "%d"))
-		ft_putdec(va_arg(args, long long));
+		ft_putnbr_fd(va_arg(args, int), 1);
 	else if (conv_match(str, "%i"))
 		ft_putnbr_fd(va_arg(args, int), 1);
 	else if (conv_match(str, "%u"))
-		ft_putudec(va_arg(args, unsigned long long));
+		ft_putunbr(va_arg(args, unsigned int), 1);
 	else if (conv_match(str, "%x"))
 		ft_puthex(va_arg(args, long long), 1);
 	else if (conv_match(str, "%X"))
