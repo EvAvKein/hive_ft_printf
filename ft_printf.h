@@ -22,6 +22,9 @@ void    ft_putdec(long long n);
 // Write unsigned number to terminal
 void    ft_putudec(unsigned long long n);
 
+// Write unsigned int to terminal
+void	ft_putunbr_fd(unsigned int n, int fd)
+
 // Write hexadecimal from number (lowercase or uppercase)
 void	ft_puthex(long long n, int lowercase);
 
