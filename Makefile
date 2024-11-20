@@ -6,15 +6,17 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2024/11/18 10:26:37 by ekeinan          ###   ########.fr        #
+#    Updated: 2024/11/20 19:10:10 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 SRC_CORE = ft_printf.c \
-		   ft_putdecimals.c \
-		   ft_puthex.c
+		   print_chars.c \
+		   print_int.c \
+		   print_ptr.c \
+		   print_hex.c \
 
 OBJ_CORE = $(SRC_CORE:.c=.o)
 
