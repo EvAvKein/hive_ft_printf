@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 08:40:17 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 22:03:32 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/21 11:45:10 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	recursive_write_last_digit(int n, size_t *print_count)
 	char	digit_char;
 
 	if (n > 9)
-		recursive_until_write_last_digit(n / 10, print_count);
+		recursive_write_last_digit(n / 10, print_count);
 	if (*print_count < 0)
 		return ;
 	digit_char = (n % 10) + '0';
@@ -31,7 +31,7 @@ static void	recursive_write_last_udigit(unsigned int n, size_t *print_count)
 	char	digit_char;
 
 	if (n > 9)
-		recursive_until_write_last_digit(n / 10, print_count);
+		recursive_write_last_digit(n / 10, print_count);
 	if (*print_count < 0)
 		return ;
 	digit_char = (n % 10) + '0';
