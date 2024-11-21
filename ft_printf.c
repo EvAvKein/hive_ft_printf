@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2224/11/14 15:00:24 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 22:00:26 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/21 11:30:13 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 static void	convert(const char *str, va_list args, size_t *print_count)
 {
 	str++;
-	if (!str)
-		return ;
+	if (*str == '%' || !*str)
+		increase_print_count(write(1, "%", 1), print_count);
 	else if (*str == 'c')
 		print_char(va_arg(args, int), print_count);
 	else if (*str == 's')
@@ -37,8 +37,6 @@ static void	convert(const char *str, va_list args, size_t *print_count)
 		print_lowercase_hex(va_arg(args, unsigned long long), print_count);
 	else if (*str == 'X')
 		print_uppercase_hex(va_arg(args, unsigned long long), print_count);
-	else if (*str == '%')
-		increase_print_count(write(1, "%", 1), print_count);
 	else
 		increase_print_count(write(1, --str, 2), print_count);
 }
