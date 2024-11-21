@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2224/11/14 15:00:24 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 21:26:02 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/20 22:00:26 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 #include "libft/libft.h"
 #include "ft_printf.h"
 
-static void convert(const char *str, va_list args, size_t *print_count)
+static void	convert(const char *str, va_list args, size_t *print_count)
 {
 	str++;
-
 	if (!str)
 		return ;
 	else if (*str == 'c')
@@ -50,38 +49,35 @@ static size_t	segment_length(const char *s)
 
 	pointer_to_next_sep = ft_strchr(s, '%');
 	if (pointer_to_next_sep)
-		return pointer_to_next_sep - s;
+		return (pointer_to_next_sep - s);
 	else
-		return ft_strlen(s);
+		return (ft_strlen(s));
 }
 
 int	ft_printf(const char *format, ...)
 {
 	size_t	f_i;
-	va_list args;
-	size_t	curr_seg_len;
+	va_list	args;
+	size_t	cur_seg_len;
 	size_t	print_count;
 
 	va_start(args, format);
-
 	f_i = 0;
 	print_count = 0;
 	while (format[f_i])
 	{
 		if (print_count < 0)
-			return (print_count);
+			break ;
 		if (format[f_i] == '%' && format[f_i + 1])
 		{
 			convert(&format[f_i], args, &print_count);
 			f_i += 2;
 			continue ;
 		}
-		curr_seg_len = segment_length(&format[f_i]);
-		increase_print_count(write(1, &format[f_i], curr_seg_len), &print_count);
-		f_i += curr_seg_len;
+		cur_seg_len = segment_length(&format[f_i]);
+		increase_print_count(write(1, &format[f_i], cur_seg_len), &print_count);
+		f_i += cur_seg_len;
 	}
-
 	va_end(args);
-
 	return (print_count);
 }

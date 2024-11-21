@@ -6,15 +6,15 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:09:59 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 20:12:40 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/20 22:01:28 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
-#include <stddef.h>
-
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
+# include <stdint.h>
+# include <stddef.h>
 
 // Print to terminal with a template and value conversions (simplified remake)
 int		ft_printf(const char *format, ...);
@@ -32,10 +32,10 @@ void	print_str(char *s, size_t *print_count);
 void	print_ptr(uintptr_t ptr_as_num, size_t *print_count);
 
 // Print an integer and increase print count
-void    print_int(int n, size_t *print_count);
+void	print_int(int n, size_t *print_count);
 
 // Print an unsigned integer and increase print count
-void    print_uint(unsigned int n, size_t *print_count);
+void	print_uint(unsigned int n, size_t *print_count);
 
 // Print a lowercase hexadecimal by number and increase print count
 void	print_lowercase_hex(unsigned long long n, size_t *print_count);

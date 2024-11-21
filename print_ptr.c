@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:23:06 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 21:27:31 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/20 22:01:50 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	print_ptr(uintptr_t ptr_as_num, size_t *print_count)
 	}
 	increase_print_count(write(1, "0x", 2), print_count);
 	if (*print_count < 0)
-		return;
-	print_lowercase_hex(ptr_as_num,  print_count);
+		return ;
+	print_lowercase_hex(ptr_as_num, print_count);
 }

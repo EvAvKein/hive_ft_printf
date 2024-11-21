@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:09:25 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 19:34:17 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/20 21:55:34 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "ft_printf.h"
 
 void	print_char(char c, size_t *print_count)
-{   
+{
 	increase_print_count(write(1, &c, 1), print_count);
 }
 
