@@ -6,14 +6,14 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:59:53 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 22:03:44 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/21 13:28:03 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdio.h>
 
-void	increase_print_count(size_t increase, size_t *print_count)
+void	increase_print_count(long long increase, size_t *print_count)
 {
 	if (increase < 0)
 	{

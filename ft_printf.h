@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:09:59 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 22:01:28 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/21 13:28:28 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int		ft_printf(const char *format, ...);
 
 // Increase print count if it's still a valid count, or set to invalid if new is
-void	increase_print_count(size_t increase, size_t *print_count);
+void	increase_print_count(long long increase, size_t *print_count);
 
 // Print a character and increase print count
 void	print_char(char c, size_t *print_count);
