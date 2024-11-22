@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2224/11/14 15:00:24 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/22 19:00:47 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/22 19:51:11 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "libft/libft.h"
 #include "ft_printf.h"
 
-static void	convert(const char *str, va_list args, size_t *print_count)
+static void	convert(const char *str, va_list args, long long *print_count)
 {
 	str++;
 	if (!*str)
@@ -54,7 +54,7 @@ static size_t	segment_length(const char *s)
 		return (ft_strlen(s));
 }
 
-static void	print(const char *format, va_list args, size_t	*print_count)
+static void	print(const char *format, va_list args, long long	*print_count)
 {
 	size_t	f_i;
 	size_t	cur_seg_len;
@@ -62,7 +62,7 @@ static void	print(const char *format, va_list args, size_t	*print_count)
 	f_i = 0;
 	while (format[f_i])
 	{
-		if (print_count < 0)
+		if (*print_count < 0)
 			break ;
 		if (format[f_i] == '%')
 		{
@@ -78,8 +78,8 @@ static void	print(const char *format, va_list args, size_t	*print_count)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	args;
-	size_t	print_count;
+	va_list		args;
+	long long	print_count;
 
 	if (!format)
 		return (-1);

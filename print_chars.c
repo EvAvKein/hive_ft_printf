@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:09:25 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 21:55:34 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/22 19:54:22 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "libft/libft.h"
 #include "ft_printf.h"
 
-void	print_char(char c, size_t *print_count)
+void	print_char(char c, long long *print_count)
 {
 	increase_print_count(write(1, &c, 1), print_count);
 }
 
-void	print_str(char *s, size_t *print_count)
+void	print_str(char *s, long long *print_count)
 {
 	if (!s)
 	{

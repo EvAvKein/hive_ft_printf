@@ -6,21 +6,21 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 17:16:39 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 21:26:42 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/22 19:55:33 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "ft_printf.h"
 
-void	print_uppercase_hex(unsigned long long n, size_t *print_count)
+void	print_uppercase_hex(unsigned long long n, long long *print_count)
 {
 	char	chr;
 
 	if (n > 15)
 	{
 		print_uppercase_hex(n / 16, print_count);
-		if (print_count < 0)
+		if (*print_count < 0)
 			return ;
 		n %= 16;
 	}
@@ -31,14 +31,14 @@ void	print_uppercase_hex(unsigned long long n, size_t *print_count)
 	increase_print_count(write(1, &chr, 1), print_count);
 }
 
-void	print_lowercase_hex(unsigned long long n, size_t *print_count)
+void	print_lowercase_hex(unsigned long long n, long long *print_count)
 {
 	char	chr;
 
 	if (n > 15)
 	{
 		print_lowercase_hex(n / 16, print_count);
-		if (print_count < 0)
+		if (*print_count < 0)
 			return ;
 		n %= 16;
 	}
