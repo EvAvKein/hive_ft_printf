@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 08:40:17 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/21 11:45:10 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/22 15:54:31 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ static void	recursive_write_last_udigit(unsigned int n, size_t *print_count)
 
 void	print_int(int n, size_t *print_count)
 {
+	if (n == -2147483648)
+	{
+		increase_print_count(write(1, "-2147483648", 11), print_count);
+		return ;
+	}
 	if (n < 0)
 	{
 		increase_print_count(write(1, "-", 1), print_count);
