@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2024/11/21 12:06:50 by ekeinan          ###   ########.fr        #
+#    Updated: 2024/11/29 10:20:34 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,11 +39,11 @@ libft.a:
 
 clean:
 	@cd libft && make $@
-	rm -f $(OBJ_CORE) ${OBJ_BONUS} 
+	rm -f $(OBJ_CORE) $(OBJ_BONUS)
 
 fclean: clean
 	@cd libft && make $@
-	rm -f $(NAME) $()
+	rm -f $(NAME)
 
 re: fclean all
 	@cd libft && make $@
