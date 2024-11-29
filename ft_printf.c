@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2224/11/14 15:00:24 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/22 19:51:11 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/29 10:57:29 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ static void	convert(const char *str, va_list args, long long *print_count)
 
 static size_t	segment_length(const char *s)
 {
-	char	*pointer_to_next_sep;
+	char	*pointer_to_next_conv;
 
-	pointer_to_next_sep = ft_strchr(s, '%');
-	if (pointer_to_next_sep)
-		return (pointer_to_next_sep - s);
+	pointer_to_next_conv = ft_strchr(s, '%');
+	if (pointer_to_next_conv)
+		return (pointer_to_next_conv - s);
 	else
 		return (ft_strlen(s));
 }
