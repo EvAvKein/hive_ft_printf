@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 15:50:06 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/20 21:25:09 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/29 12:47:13 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,13 @@ int	main(void)
 		inte,
 		inte
 	);
-	
-	ft_printf("format len: %i, printed len: %i\n", ft_strlen(format), chars);
 
-	ft_printf("---------\n");
-
-	char				*printf = "ft_printing:\ninvalid %y conversion";
-
-	ft_printf(printf);
+	int ret;
+	int original_stdout = dup(STDOUT_FILENO);
+	fclose(stdout);
+	ret = ft_printf("test\n");
+	stdout = (FILE *)fdopen(original_stdout, "w");
+	printf("write error: %i", ret);
 
 	return (0);
 }
