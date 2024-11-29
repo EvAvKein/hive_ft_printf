@@ -6,14 +6,10 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2224/11/14 15:00:24 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/29 10:57:29 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/29 12:55:03 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <stdint.h>
-#include <unistd.h>
-#include "libft/libft.h"
 #include "ft_printf.h"
 
 static void	convert(const char *str, va_list args, long long *print_count)

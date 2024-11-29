@@ -6,12 +6,10 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:09:25 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/22 19:54:22 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/29 12:55:32 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft/libft.h"
 #include "ft_printf.h"
 
 void	print_char(char c, long long *print_count)

@@ -6,11 +6,10 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 17:16:39 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/22 19:55:33 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/29 12:55:40 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "ft_printf.h"
 
 void	print_uppercase_hex(unsigned long long n, long long *print_count)

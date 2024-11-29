@@ -6,12 +6,10 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 08:40:17 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/22 19:55:09 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/29 12:55:49 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <unistd.h>
 #include "ft_printf.h"
 
 static void	recursive_write_last_digit(int n, long long *print_count)

@@ -6,15 +6,18 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:09:59 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/22 19:52:12 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/29 12:54:48 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdint.h>
+# include "libft/libft.h"
+# include <unistd.h>
+# include <stdarg.h>
 # include <stddef.h>
+# include <stdint.h>
 
 // Print to terminal with a template and value conversions (simplified remake)
 int		ft_printf(const char *format, ...);

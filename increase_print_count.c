@@ -6,12 +6,9 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:59:53 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/22 19:52:39 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/11/29 12:55:17 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
-#include <stdio.h>
 
 void	increase_print_count(long long increase, long long *print_count)
 {
