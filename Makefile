@@ -6,21 +6,21 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2024/11/29 10:20:34 by ekeinan          ###   ########.fr        #
+#    Updated: 2024/12/05 12:10:53 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 LIB = libft.a
 
-SRC_CORE = ft_printf.c \
-		   increase_print_count.c \
-		   print_chars.c \
-		   print_int.c \
-		   print_ptr.c \
-		   print_hex.c
+SRC = ft_printf.c \
+	  increase_print_count.c \
+	  print_chars.c \
+	  print_int.c \
+	  print_ptr.c \
+	  print_hex.c
 
-OBJ_CORE = $(SRC_CORE:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 COMPILE_FLAGS = -Wall -Wextra -Werror
 
@@ -29,9 +29,9 @@ all: $(NAME)
 %.o: %.c
 	cc $(COMPILE_FLAGS) -c $< -o $@
 
-$(NAME): $(OBJ_CORE) $(LIB)
+$(NAME): $(OBJ) $(LIB)
 	@mv $(LIB) $(NAME)
-	ar -rcs $(NAME) $(OBJ_CORE)
+	ar -rcs $(NAME) $(OBJ)
 
 libft.a:
 	@make -C ./libft
@@ -39,7 +39,7 @@ libft.a:
 
 clean:
 	@cd libft && make $@
-	rm -f $(OBJ_CORE) $(OBJ_BONUS)
+	rm -f $(OBJ)
 
 fclean: clean
 	@cd libft && make $@
