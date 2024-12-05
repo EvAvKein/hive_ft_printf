@@ -6,7 +6,7 @@
 /*   By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:09:59 by ekeinan           #+#    #+#             */
-/*   Updated: 2024/11/29 12:54:48 by ekeinan          ###   ########.fr       */
+/*   Updated: 2024/12/05 12:03:14 by ekeinan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // Print to terminal with a template and value conversions (simplified remake)
 int		ft_printf(const char *format, ...);
 
-// Increase print count if it's still a valid count, or set to invalid if new is
+// Increase print count *unless* increase is/was negative (in which case it stays negative)
 void	increase_print_count(long long increase, long long *print_count);
 
 // Print a character and increase print count
