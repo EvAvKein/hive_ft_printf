@@ -45,6 +45,6 @@ This `ft_printf` handles `write` errors and returns values like the original `pr
 
 ---
 
-## [Credits]
+## Credits
 
 - [Eve Keinan](https://github.com/EvAvKein)
