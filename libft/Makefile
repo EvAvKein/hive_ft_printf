@@ -6,7 +6,7 @@
 #    By: ekeinan <ekeinan@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 09:31:47 by ekeinan           #+#    #+#              #
-#    Updated: 2024/11/20 08:50:46 by ekeinan          ###   ########.fr        #
+#    Updated: 2025/01/01 17:43:34 by ekeinan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,22 +68,18 @@ all: $(NAME)
 %.o: %.c
 	cc $(COMPILE_FLAGS) -c $< -o $@
 
-so:
-	$(CC) -nostartfiles -fPIC $(COMPILE_FLAGS) $(SRC_CORE) $(SRC_BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ_CORE) $(OBJ_BONUS)
-
 $(NAME): $(OBJ_CORE)
 	ar -rcs $(NAME) $(OBJ_CORE)
 
 bonus: ${BONUS_NAME}
 
-${BONUS_NAME}: $(OBJ_CORE) $(OBJ_BONUS)
+$(BONUS_NAME): $(OBJ_CORE) $(OBJ_BONUS)
 	ar -rcs $(NAME) $(OBJ_CORE) $(OBJ_BONUS)
-	@touch ${BONUS_NAME}
+	@touch $(BONUS_NAME)
 
 clean:
-	rm -f $(OBJ_CORE) ${OBJ_BONUS}
-	@rm -f ${BONUS_NAME}
+	rm -f $(OBJ_CORE) $(OBJ_BONUS)
+	@rm -f $(BONUS_NAME)
 
 fclean: clean
 	rm -f $(NAME)
