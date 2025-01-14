@@ -28,7 +28,7 @@ This `ft_printf` can convert and print the following types:
 
 This `ft_printf` handles `write` errors and returns values like the original `printf` does, except in cases where the original `printf` throws compile warnings: Since we're required to compile all projects with `-Wall -Wextra -Werror`, those cases failing to compile means they're out of scope for `ft_printf`.
 
-(This project includes [libft](https://github.com/EvAvKein/libft), as allowed in the assignment instructions)
+(This project includes [libft](https://github.com/EvAvKein/hive_libft), as allowed in the assignment instructions)
 
 ---
 
