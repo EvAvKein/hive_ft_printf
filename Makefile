@@ -48,4 +48,4 @@ fclean: clean
 re: fclean all
 	@cd libft && make $@
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
